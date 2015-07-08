@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  index_of_users: "All users"
+  new_of_users: "Sign up"
