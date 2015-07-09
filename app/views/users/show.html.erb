@@ -8,4 +8,27 @@
       </h1>
     </section>
   </aside>
+<% if logged_in? && current_user?(@user) %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="entry_form">
+        <%= render 'shared/entry_form', entry: current_user.entries.build %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <p><%=(t"user_show_paragraph")%> <%= @user.name %></p>
+<% end %>
+  <div class="col-md-8">
+    <% if @user.entries.any? %>
+      <h3>Entries (<%= @user.entries.count %>)</h3>
+      <ol class="entries">
+        <%= render @entries %>
+      </ol>
+      <%= will_paginate @entries %>
+    <% end %>
+  </div>
 </div>
