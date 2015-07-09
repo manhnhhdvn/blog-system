@@ -21,5 +21,8 @@
 
 en:
   hello: "Hello world"
-  index_of_users: "All users"
-  new_of_users: "Sign up"
+  users_index_title: "All users"
+  users_new_title: "Sign up"
+  user_new_btn_submit: "Create my account"
+  session_new_title: "Log in"
+  session_new_btn_submit: "Sign up now!"
