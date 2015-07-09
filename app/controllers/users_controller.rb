@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   def show
     if User.exists?(params[:id])
       @user = User.find params[:id]
+      @entries = @user.entries.paginate(page: params[:page], per_page: 10)
     else
       flash[:danger] = "Could not found this user"
       redirect_to root_path

@@ -1,0 +1,7 @@
+<%= form_for(entry) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: (t"_entry_form_TA") %>
+  </div>
+  <%= f.submit (t"_entry_form_btn"), class: "btn btn-primary" %>
+<% end %>
