@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
       flash[:success] = "Entry created!"
       redirect_to root_url
     else
+      @feed_items = []
       render root_url
     end
   end

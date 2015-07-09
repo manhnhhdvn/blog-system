@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
-  root "users#index"
+  get 'static_pages/home'
+
+  get 'static_pages/help'
+
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
   get    "login"     => "sessions#new"
   post   "login"     => "sessions#create"
   delete "logout"    => "sessions#destroy"
   get    "signup"    => "users#new"
+  get    "about"     => "static_pages#about"
+  get    "contact"   => "static_pages#contact"
+  get    "help"      => "static_pages#help"
+  get    "home"      => "static_pages#home"
+  root   "static_pages#home"
   resources :entries
   resources :users
   resources :microposts, only: [:create, :destroy]
