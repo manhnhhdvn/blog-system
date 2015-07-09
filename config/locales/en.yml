@@ -24,5 +24,7 @@ en:
   users_index_title: "All users"
   users_new_title: "Sign up"
   user_new_btn_submit: "Create my account"
+  user_edit_title: "Edit user"
+  user_edit_btn_submit: "Save changes"
   session_new_title: "Log in"
   session_new_btn_submit: "Sign up now!"
