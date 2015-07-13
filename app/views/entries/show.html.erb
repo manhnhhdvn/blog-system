@@ -1,0 +1,24 @@
+<li id="#" class="row">
+  <%= link_to gravatar_for(@entry.user), @entry.user %>
+  <div class="user"><%= link_to @entry.user.name, @entry.user %></div>
+  <div class="content" style="font-size: 200%; bold: true"><%= @entry.content %></div>
+  <div class="timestamp">
+    Posted <%= time_ago_in_words(@entry.created_at) %> ago.
+  </div>
+</li>
+<hr/>
+<div class="container-fluid row">
+<%= render @comments%>
+<%= will_paginate @comments %>
+</div>
+<% if (current_user?(@entry.user) || current_user.followers.include?(@entry.user)) && logged_in?%>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="entry_form">
+        <%= render 'shared/comment_form', entry: @entry %>
+      </section>
+    </aside>
+  </div>
+<%else%>
+	<p>You cannot comment here because this user is not follow you.</p>
+<% end %>

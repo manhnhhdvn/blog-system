@@ -288,3 +288,13 @@ span.picture {
     border: 0;
   }
 }
+
+li{
+  list-style: none;
+}
+
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
