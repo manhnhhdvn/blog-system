@@ -6,6 +6,10 @@ class StaticPagesController < ApplicationController
   	else
   	 @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
   	end
+    # if logged_in?
+    #   @entry  = current_user.entries.build
+    #   @feed_items = current_user.feed.paginate(page: params[:page], per_page: 10)
+    # end
   end
 
   def help
