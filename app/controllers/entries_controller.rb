@@ -15,6 +15,12 @@ class EntriesController < ApplicationController
   def destroy
   end
 
+  def show
+    @entry = Entry.find(params[:id])
+    @user = @entry.user
+    @comments = @entry.comments.paginate(page: params[:page], per_page: 10)
+  end
+
   private
 
     def entry_params
