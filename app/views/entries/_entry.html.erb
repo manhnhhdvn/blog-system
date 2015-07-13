@@ -6,8 +6,9 @@
     Posted <%= time_ago_in_words(entry.created_at) %> ago.
   </span>
   <span class="timestamp"><%= pluralize(entry.comments.count, "comment")%></span>
-  <%#byebug%>
-  <% if (current_user?(entry.user) || current_user.followers.include?(entry.user)) && logged_in?%>
-    <span class="timestamp"><%= link_to "Write comment", entry%></span>
+  <% if logged_in? %>
+    <% if (current_user?(entry.user) || current_user.followers.include?(entry.user)) %>
+      <span class="timestamp"><%= link_to "Write comment", entry%></span>
+    <% end %>
   <% end %>
 </li>

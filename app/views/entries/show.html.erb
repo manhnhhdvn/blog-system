@@ -11,7 +11,8 @@
 <%= render @comments%>
 <%= will_paginate @comments %>
 </div>
-<% if (current_user?(@entry.user) || current_user.followers.include?(@entry.user)) && logged_in?%>
+<% if logged_in? %>
+<% if (current_user?(@entry.user) || current_user.followers.include?(@entry.user)) %>
   <div class="row">
     <aside class="col-md-4">
       <section class="entry_form">
@@ -21,4 +22,5 @@
   </div>
 <%else%>
 	<p>You cannot comment here because this user is not follow you.</p>
+<% end %>
 <% end %>
