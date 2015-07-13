@@ -7,6 +7,9 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
 <% if logged_in? && current_user?(@user) %>
   <div class="row">
@@ -20,6 +23,7 @@
   <p><%=(t"user_show_paragraph")%> <%= @user.name %></p>
 <% end %>
   <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
     <% if @user.entries.any? %>
       <h3>Entries (<%= @user.entries.count %>)</h3>
       <ol class="entries">
